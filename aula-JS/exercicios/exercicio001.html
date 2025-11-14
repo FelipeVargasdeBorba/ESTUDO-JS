@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Contador</title>
+    <style>
+        body {
+            background: cadetblue;
+            font: normal 15pt Arial;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        div {
+            padding: 8px;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div id="dados">
+            <p>
+                Início:
+                <input type="number" name="inicio" id="txti" required>
+            </p>
+            <p>
+                Fim:
+                <input type="number" name="fim" id="txtf" required>
+            </p>
+            <p>
+                Passo:
+                <input type="number" name="passo" id="txtp" required>
+            </p>
+            <p>
+                <input type="button" value="Contar" onclick="contar()">
+            </p>
+        </div>
+
+        <div id="res">
+            Preparando a contagem...
+        </div>
+    </section>
+
+    <script>
+        function contar() {
+            var inicio = document.getElementById('txti').value;
+            var fim = document.getElementById('txtf').value;
+            var passo = document.getElementById('txtp').value;
+            var res = document.getElementById('res');
+
+
+            res.innerHTML = 'Contando: <br>';
+            var i = Number(inicio.value);
+            var f = Number(fim.value);
+            var p = Number(passo.value);
+
+            if (i < f) {
+                for (let c = i; c <= f; c += p) {
+                    res.innerHTML += `${c}, `;
+                }
+            }
+            else {
+                for (let c = i; c >= f; c -= p) {
+                    res.innerHTML += `${c}, `;
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

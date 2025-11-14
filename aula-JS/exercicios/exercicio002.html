@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header h1{
+            text-align: center;
+            margin-top: 30vh;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+        }
+
+        div {
+            padding: 50px;
+            background-color: lightgray;
+            border-radius: 8px;
+        }
+
+
+    </style>
+
+    <header>
+        <h1>Gerador de Tabuada</h1>
+    </header>
+
+    <section>
+        <div>
+            <p>
+                Numero: <input type="number" name="num" id="txt1">
+                <input type="button" value="Gerar Tabuada" onclick="calcularTabuada()">
+            </p>
+            <div id="res">
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function calcularTabuada(){
+            var num = Number(document.getElementById("txt1").value)
+            var res = document.getElementById("res")
+            res.innerHTML = `<h3>Tabuada do ${num}:</h3>`
+
+            for(var i = 1; i <= 10; i++ ){
+                var resultado = num * i
+                res.innerHTML += `${num} x ${i} = ${resultado} <br>`
+            }
+        }
+    </script>
+</body>
+</html>

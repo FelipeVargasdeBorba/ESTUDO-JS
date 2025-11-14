@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: cornflowerblue;
+            color: white;
+            margin: 20px;
+        }
+
+        div#area {
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            justify-self: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="area">
+        interaja!
+    </div>
+
+    <script>
+
+        var a = document.getElementById('area')
+
+        a.addEventListener('mouseout', mouse_sair)
+        a.addEventListener('mouseenter', mouse_sobre)
+        a.addEventListener('click', clicar)
+
+        function mouse_sobre() {
+            a.style.backgroundColor = 'lightgreen'
+        }
+
+        function mouse_sair() {
+            a.style.backgroundColor = 'white'
+        }
+
+        function clicar() {
+            a.innerHTML = 'Clicou!'
+            a.style.backgroundColor = 'lightblue'
+        }
+    </script>
+</body>
+
+</html>
